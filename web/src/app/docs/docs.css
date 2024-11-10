@@ -1,0 +1,47 @@
+/* Estilização do Markdown */
+.prose {
+   color: theme('colors.dracula.foreground');
+ }
+ 
+ .prose h1,
+ .prose h2,
+ .prose h3,
+ .prose h4 {
+   color: theme('colors.dracula.foreground');
+   border-bottom: 1px solid theme('colors.dracula.purple/20');
+   padding-bottom: 0.5rem;
+ }
+ 
+ .prose code {
+   background-color: theme('colors.dracula.current');
+   color: theme('colors.dracula.purple');
+   padding: 0.2rem 0.4rem;
+   border-radius: 0.25rem;
+ }
+ 
+ .prose pre {
+   background-color: theme('colors.dracula.current') !important;
+   border: 1px solid theme('colors.dracula.purple/20');
+ }
+ 
+ .prose a {
+   color: theme('colors.dracula.cyan');
+   text-decoration: none;
+ }
+ 
+ .prose a:hover {
+   text-decoration: underline;
+ }
+ 
+ .prose blockquote {
+   border-left-color: theme('colors.dracula.purple');
+   background-color: theme('colors.dracula.current');
+ }
+ 
+ /* Estilização do Mermaid */
+ .mermaid {
+   background-color: theme('colors.dracula.current');
+   padding: 1rem;
+   border-radius: 0.5rem;
+   margin: 1rem 0;
+ }

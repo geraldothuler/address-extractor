@@ -1,0 +1,180 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --background: 231, 15%, 18%;
+  --foreground: 60, 30%, 96%;
+}
+
+body {
+  background-color: theme('colors.dracula.background');
+  color: theme('colors.dracula.foreground');
+}
+
+@layer base {
+  * {
+    @apply border-dracula-current;
+  }
+}
+
+@layer components {
+  .btn {
+    @apply px-4 py-2 rounded-lg font-medium transition-all duration-200 ease-in-out;
+  }
+
+  .btn-primary {
+    @apply bg-dracula-purple hover:bg-dracula-purple/90 text-dracula-foreground;
+  }
+
+  .btn-secondary {
+    @apply bg-dracula-current hover:bg-dracula-current/90 text-dracula-foreground;
+  }
+
+  .input {
+    @apply bg-dracula-current border border-dracula-purple/20 rounded-lg px-3 py-2 
+    focus:outline-none focus:ring-2 focus:ring-dracula-purple/50 text-dracula-foreground;
+  }
+
+  .card {
+    @apply bg-dracula-current rounded-lg p-6 border border-dracula-purple/20;
+  }
+}
+
+/* Scrollbar customization */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  @apply bg-dracula-background;
+}
+
+::-webkit-scrollbar-thumb {
+  @apply bg-dracula-current rounded-full;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  @apply bg-dracula-purple/50;
+}
+
+/* Form elements */
+input, select, textarea {
+  @apply bg-dracula-current border border-dracula-purple/20 rounded-lg px-3 py-2 
+    focus:outline-none focus:ring-2 focus:ring-dracula-purple/50 text-dracula-foreground;
+}
+
+input::placeholder, 
+select::placeholder, 
+textarea::placeholder {
+  @apply text-dracula-comment;
+}
+
+/* Focus states */
+:focus-visible {
+  @apply outline-none ring-2 ring-dracula-purple ring-offset-2 ring-offset-dracula-background;
+}
+
+/* Transitions */
+.transition-all {
+  @apply transition-all duration-200 ease-in-out;
+}
+
+/* Animations */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-fadeIn {
+  animation: fadeIn 0.3s ease-out forwards;
+}
+
+/* Loading states */
+.loading {
+  @apply opacity-50 cursor-not-allowed;
+}
+
+/* Typography */
+h1, h2, h3, h4, h5, h6 {
+  @apply font-medium text-dracula-foreground;
+}
+
+h1 {
+  @apply text-3xl mb-6;
+}
+
+h2 {
+  @apply text-2xl mb-4;
+}
+
+h3 {
+  @apply text-xl mb-3;
+}
+
+/* Links */
+a {
+  @apply text-dracula-purple hover:text-dracula-purple/80 transition-colors;
+}
+
+/* Code blocks */
+pre, code {
+  @apply bg-dracula-current rounded px-2 py-1 font-mono text-sm;
+}
+
+/* Tables */
+table {
+  @apply w-full border-collapse;
+}
+
+th, td {
+  @apply border border-dracula-current p-2 text-left;
+}
+
+th {
+  @apply bg-dracula-current font-medium;
+}
+
+/* Lists */
+ul, ol {
+  @apply pl-6;
+}
+
+ul {
+  @apply list-disc;
+}
+
+ol {
+  @apply list-decimal;
+}
+
+/* Cards and containers */
+.container {
+  @apply max-w-7xl mx-auto px-4 sm:px-6 lg:px-8;
+}
+
+/* Responsive adjustments */
+@media (max-width: 640px) {
+  h1 {
+    @apply text-2xl;
+  }
+  
+  h2 {
+    @apply text-xl;
+  }
+  
+  h3 {
+    @apply text-lg;
+  }
+  
+  .container {
+    @apply px-4;
+  }
+}
